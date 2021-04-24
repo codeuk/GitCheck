@@ -7,12 +7,12 @@ os.system('cls')
 def check(username):
     s = requests.Session()
 
-    r = s.get("https://github.com/" + username)
-    if (r.status_code == 404):
+    req = s.get("https://github.com/" + username)
+    if (req.status_code == 404):
         return ("hit")
-    elif (r.status_code == 200):
+    elif (req.status_code == 200):
         return ("taken")
-    elif (r.status_code == 429):
+    elif (req.status_code == 429):
         return ("timeout")
     else:
         return ("Unknown Error")
