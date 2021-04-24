@@ -22,5 +22,5 @@ If you go ahead and check your 'hits.txt' file, you'll see a list of usernames w
 # Credits
 **Thanks for using Gitcheck!**
 
-**I am giving permission to modify this file ad distribute it! as long as you leave my credits in :D** 🤠
+**I am giving permission to modify this file and distribute it! as long as you leave my credits in :D** 🤠
     
