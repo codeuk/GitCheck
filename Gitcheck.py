@@ -19,11 +19,11 @@ def check(username):
 
 
 if __name__ == "__main__":
-    with open('words.txt') as f:
+    with open('Words.txt') as f:
         content = f.readlines()
     content = [x.strip() for x in content]
     for word in content:
-        file = open('hits.txt', 'a')
+        file = open('Hits.txt', 'a')
         resp = check(word)
         if resp == "hit":
             print(Fore.GREEN + 'HIT: ' + Fore.RESET + Fore.GREEN + word)
