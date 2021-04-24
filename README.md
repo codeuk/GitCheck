@@ -15,10 +15,12 @@ After completing those steps, you should see something similiar to this screen:
 
 *(My available & taken usernames will differ from yours, depending on the usernames you put into words.txt)* 
 
-If you go ahead and check your 'hits.txt' file, you'll see a list of usernames which are available to use on Github
+If you go ahead and check your 'hits.txt' file, you'll see a list of usernames which are available to use on Github!
+
+*Done!*
 
 # Credits
 **Thanks for using Gitcheck!**
 
-**I am giving permission to modify this file ad distribute it; as long as you leave my credits in :)** 🤠
+**I am giving permission to modify this file ad distribute it! as long as you leave my credits in :)** 🤠
     
