@@ -1,7 +1,7 @@
 # Gitcheck
 Gitcheck allows you to scrape through a custom list of usernames and see if they are taken/available
 
-#Setup
+# Setup
 The setup is VERY simple:
 
     Paste the usernames you would like to check into the 'words.txt' file.
@@ -18,7 +18,7 @@ After completing those steps, you should see something similiar to this screen:
 
 If you go ahead and check your 'hits.txt' file, you'll see a list of usernames which are available to use on Github
 
-
+# Credits
 **Thanks for using Gitcheck!**
 
 **I am giving permission to modify this file ad distribute it; as long as you leave my credits in :)** 🤠
