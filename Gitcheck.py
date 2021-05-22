@@ -39,6 +39,6 @@ if __name__ == "__main__":
             time.sleep(1000)
 print(f"{Fore.RESET}[{Fore.YELLOW}CHECKER FINISHED - HITS SAVED TO FILE{Fore.RESET}]")
 print(" ")
-print(f"{Fore.RESET}[{Fore.GREEN}Created by github.com/u6m ~ doop{Fore.RESET}]")
+print(f"{Fore.RESET}[{Fore.GREEN}Created by github.com/7uk ~ doop{Fore.RESET}]")
 file.close()
 
