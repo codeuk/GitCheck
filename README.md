@@ -1,5 +1,5 @@
 # GitCheck 🕊
-GitCheck 🕊 allows you to scrape through a custom list of usernames with threading and see if they are taken/available
+GitCheck 🕊 allows you to search through a list of usernames with threading and see if they're available
 
 # Setup ❕
 It's very simple: 
