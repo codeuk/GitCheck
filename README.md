@@ -1,26 +1,21 @@
 # GitCheck 🕊
-GitCheck 🕊 allows you to scrape through a custom list of usernames and see if they are taken/available
+GitCheck 🕊 allows you to scrape through a custom list of usernames with threading and see if they are taken/available
+
 # Setup ❕
-The setup is VERY simple:
+It's very simple: 
 
-    Paste the usernames you would like to check into the 'words.txt' file.
+    Paste the usernames you would like to check into the 'words.txt' file
     
-    Launch 'setup.bat' and wait for everything to complete.
-    
-    Boom! You've successfully installed & launched Gitcheck!
-    
-After completing those steps, you should see something similiar to this screen:
- 
-![image](https://user-images.githubusercontent.com/75194878/115962196-18437300-a512-11eb-9898-7c2e0edd28c8.png)
+    Launch 'setup.bat' and wait for everything to install and launch
 
-*(My available & taken usernames will differ from yours, depending on the usernames you put into words.txt)* 
+**The 'hits' (available usernames) will be written to hits.txt**
 
-If you go ahead and check your 'hits.txt' file, you'll see a list of usernames which are available to use on Github!
+ # Images
+![image](https://user-images.githubusercontent.com/75194878/171070033-38c72f9a-bbed-4a2a-b81e-258ca5e299d6.png)
 
-*Done!*
 
 # Credits 🏳
 **Thanks for using Gitcheck!**
 
-**I am giving permission to modify this file and distribute it! as long as you leave my credits in :D** 🤠
+**To support the repo, star it or leave a useful pull request**
     
