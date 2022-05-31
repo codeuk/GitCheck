@@ -1,44 +1,60 @@
-import requests, re, json, time, os
-from colorama import init, Fore
-init(autoreset=True)
+import requests, threading, json, time, os
 
-os.system('cls')
+THREADS = 8
 
-def check(username):
-    s = requests.Session()
+class Colors:
+    """ Program Colors """
+    red = u"\u001b[31m"
+    green  = u"\u001b[32m"
+    reset  = u"\u001b[0m"
 
-    req = s.get("https://github.com/" + username)
-    if (req.status_code == 404):
-        return ("hit")
-    elif (req.status_code == 200):
-        return ("taken")
-    elif (req.status_code == 429):
-        return ("timeout")
-    else:
-        return ("Unknown Error")
+class GitCheck:
+    """ Github Username Checker """
+    def __init__(self):
+        self.checked = []
+        self.banner = """
+        -----------------------
+        Github Username Checker
+        -----------------------
+           GITHUB.COM/CODEUK   
+        =======================
+        """
 
+    @staticmethod
+    def StartThreads(func) -> None:
+        for i in range(THREADS):
+            thread = threading.Thread(target=func, args=[i])
+            thread.start()
 
-if __name__ == "__main__":
-    with open('Words.txt') as f:
-        content = f.readlines()
-    content = [x.strip() for x in content]
-    for word in content:
-        file = open('Hits.txt', 'a')
-        resp = check(word)
-        if resp == "hit":
-            print(Fore.GREEN + 'HIT: ' + Fore.RESET + Fore.GREEN + word)
-            file.write(word + "\n")
-            file.close()
-        elif resp == "taken":
-            print(Fore.RED + 'BAD: ' + Fore.RESET + Fore.RED + word)
-        elif resp == "timeout":
-            print(Fore.WHITE + "Timeout")
-            time.sleep(1000)
-        else:
-            print(Fore.YELLOW + "UNKNOWN ERROR - CODE PROBLEM?")
-            time.sleep(1000)
-print(f"{Fore.RESET}[{Fore.YELLOW}CHECKER FINISHED - HITS SAVED TO FILE{Fore.RESET}]")
-print(" ")
-print(f"{Fore.RESET}[{Fore.GREEN}Created by github.com/7uk ~ doop{Fore.RESET}]")
-file.close()
+    @staticmethod
+    def Check(username) -> bool:
+        r = requests.get(f"https://github.com/{username}")
+        match r.status_code:
+            case 404: return True
+            case 200: return False
+
+    def Log(self, threadNum):
+        c = Colors()
+        with open('words.txt') as f:
+            words = [x.strip() for x in f.readlines()]
+
+        with open('hits.txt', 'a') as file:
+            for i, word in enumerate(words):
+                if word in self.checked: continue
+                else: self.checked.append(word)
+
+                if self.Check(word):
+                    print(f'{c.reset}[#{c.green}{i}{c.reset}] HIT: {c.green}{word}')
+                    file.write(word + "\n")
+                    file.close()
+                else:
+                    print(f'{c.reset}[#{c.green}{i}{c.reset}] BAD: {c.red}{word}')
+
+    def Main(self) -> None:
+        os.system('cls')
+        print(self.banner)
+        self.StartThreads(self.Log)
+
+gc = GitCheck()
+gc.Main()
 
